@@ -37,19 +37,16 @@ answer =
 --  2. Take the first list of nines that p divides and return its length
 --  3. If p divides none of them, then there is not a cycle
 period :: Integer -> Integer
-period p =  ends1379 $ if divisibleBy5or2 p
-                       then rationalize (1 % p) 2
-                       else p
+period p =
+    ends1379 $ if divisibleBy5or2 p then rationalize (1 % p) 2 else p
 
 -- For a denominator ending 1,3,7, or 9 call cyc on it
 -- if cyc is empty then return 0
 -- otherwise return the length of the head of cyc p
 -- which is the length of the cyclic period
 ends1379 :: Integer -> Integer
-ends1379 p = 
-    if null cp
-    then 0
-    else toInteger . length . show $ head cp
+ends1379 p =
+    if null cp then 0 else toInteger . length . show $ head cp
   where 
     cp = cyc p
 
@@ -60,9 +57,7 @@ ends1379 p =
 -- method due to: http://hr.userweb.mwn.de/numb/period.html
 rationalize :: Ratio Integer -> Integer -> Integer
 rationalize x t =
-    if divisibleBy5or2 dx
-    then rationalize (x * (10^t)) (t+1)
-    else dx
+    if divisibleBy5or2 dx then rationalize (x * (10^t)) (t+1) else dx
   where
     dx = denominator x
 
