@@ -1,8 +1,9 @@
 module Prime where
 
 prime :: Integer -> Bool
-prime n | n < 1 = error "not a positive integer"
+prime n | n < 1 = error "Not a positive integer"
         | n == 1 = False
+        | n == 2 = True
         | otherwise = ldp n == n
 
 ldp :: Integer -> Integer
