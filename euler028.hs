@@ -9,7 +9,6 @@
 --It can be verified that the sum of the numbers on the diagonals is 101.
 --
 --What is the sum of the numbers on the diagonals in a 1001 by 1001 spiral formed in the same way?
-
 main :: IO()
 main = print answer
 
@@ -22,6 +21,11 @@ spiral :: [Int]
 spiral = [1..1001^2]
 
 -- Gaps between numbers are a simple progression 1,3,5,7...
+-- maybe approach this with 
+-- concatMap (take 4 . repeat) [1,3..1001-2]
+-- (because we know that the longest side is 1001 and has 2 POIs on it)
+-- If we could do maths on these then we could avoid having to construc 
+-- the spiral at all
 gaps :: [Int]
 gaps   = [1,3..]
 
