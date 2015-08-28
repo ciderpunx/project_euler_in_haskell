@@ -12,8 +12,8 @@ ldp n = ldpf (primesTo n) n
 ldpf :: [Integer] -> Integer -> Integer
 ldpf [] _ = 0
 ldpf (p:ps) n | rem n p == 0 = p
-              | p^2 > n       = n
-              | otherwise     = ldpf ps n
+              | p^2 > n      = n
+              | otherwise    = ldpf ps n
 
 primesTo :: Integer -> [Integer]
 primesTo n = takeWhile ( < n) primes
