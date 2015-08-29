@@ -18,9 +18,8 @@ undigitsLong =
    where 
     addDigit num d = 10*num + d
 
-undigits :: [Int] -> Int
-undigits = fromIntegral . undigits
-
--- slightly slower to do it this way (for me)
 undigits' :: [Int] -> Int
-undigits' = read . map intToDigit
+undigits' = fromIntegral . undigits
+
+undigits :: [Int] -> Int
+undigits = read . map intToDigit
