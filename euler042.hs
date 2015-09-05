@@ -15,7 +15,7 @@ main =
 answer :: IO String
 answer = do
       ws <- readFile "p042_words.txt"
-      return . show .length .filter isTriangle . splitOn "," $ filter (/='"') ws
+      return . show . length . filter isTriangle . splitOn "," $ filter (/='"') ws
 
 -- Find the sum of all the alphabetical numbers of the letters in a word
 wordVal :: String -> Int
